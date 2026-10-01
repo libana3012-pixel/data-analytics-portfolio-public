@@ -59,6 +59,6 @@ python3 python/verify_sales.py
 The deliberately faulty data-quality input is expected to fail if run separately. [Learn how to interpret it](projects/data-quality/README.md).
 
 ## Privacy and provenance
-This is an independently published **public-safe copy** of selected work. A separate, private working repository contains business-specific NOBIMU materials and earlier drafts. None of those materials or its private Git history were copied here. A design document is identified as a design document; no fabricated dashboards, deployments or earned certifications.
+All datasets in the published exercises are synthetic. Design documents are marked as plans, not completed deployments; Power BI files and certifications will be added only when available and verified.
 
 *Business questions first. Traceable numbers. Clear decisions.*
