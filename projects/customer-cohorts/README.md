@@ -1,18 +1,38 @@
-# Customer cohorts: are people coming back?
-**Python · Customer analysis · Honest reporting**
+# Customer cohorts | Who returns the following month?
+
+**Python · Customer behaviour · Observation windows · Synthetic data**
+
+[← Portfolio home](../../README.md) · [Detailed method](METHOD.md) · [Results](RESULTS.md) · [Source data](data/orders.csv) · [Python code](cohorts.py)
+
+## The business problem
+A simple repeat-customer percentage can be unfair. A customer who first bought in March has more opportunities to return before June than someone whose first purchase was in June. If both are measured over the same calendar end date, the newer customer appears worse merely because there is less observation time.
 
 ## The question
-We know who bought once. But what share of new customers returned in the *next calendar month*? That gives us a fairer view than dividing all repeat purchasers by all customers, because newer customers have had less time to return.
+For each first-purchase month, how many people bought again in the **immediately following calendar month**? I chose that narrow definition so readers can follow it and compare periods with equal eligibility.
 
-## How this works
-A *cohort* is a group whose first purchase happened in the same month. The script finds each person's first month and checks if they purchased again in the following month.
+## Data and method
+The fictional file has 12 customers and 20 orders. Each row contains a customer ID, order ID and order month. The script groups all observed months by customer, finds each earliest purchase month, calculates its next month and tests whether another order occurred then. Duplicate order IDs are rejected.
 
-## Read it in this order
-1. `data/orders.csv` — twelve fictional customers and twenty orders.
-2. `cohorts.py` — the logic that groups customers.
-3. `RESULTS.md` — the findings and why June is intentionally left blank.
+Read [why this method was chosen](METHOD.md) for a worked example and an explanation of missing follow-up periods.
 
-Run from the portfolio root: `python3 projects/customer-cohorts/cohorts.py`. No packages required.
+## Headline findings
+| First purchase | New customers | Return next month | Rate |
+| --- | ---: | ---: | ---: |
+| March | 3 | 2 | 66.67% |
+| April | 3 | 1 | 33.33% |
+| May | 3 | 1 | 33.33% |
+| June | 3 | Not observable | Not observable |
 
-## Important distinction
-June has no full July observation. Reporting its month-one retention as 0% would be wrong; the code returns `None` (not yet observable) instead. This project is an exercise with synthetic data, not a claim about real customer behaviour.
+The June value is intentionally missing: the file ends in June, so July behaviour is unknown. A missing observation is not a measured 0%.
+
+## Reproduce
+From the root of this repository:
+```bash
+python3 projects/customer-cohorts/cohorts.py
+```
+No third-party packages required. Compare output to [the interpreted results](RESULTS.md). The GitHub [verification workflow](../../.github/workflows/verify.yml) also runs the script.
+
+## What the exercise demonstrates
+Defining a fair comparison window, reading structured files, de-duplicating order IDs and refusing to fill an unknown outcome with a misleading number. With only three people per group, this is a code-and-reasoning demonstration rather than a basis for customer strategy.
+
+[← Back to portfolio](../../README.md).
