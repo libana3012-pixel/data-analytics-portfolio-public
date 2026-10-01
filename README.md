@@ -23,7 +23,7 @@ This collection shows my technical progression after the marketing-focused learn
 | [Data quality](projects/data-quality/README.md) | Can problematic source rows be caught before reporting? | Python validation, tests, error fixtures |
 | [Sales cross-check](python/README.md) | Do two calculation methods agree? | Independent Python check on synthetic transactions |
 
-[Start here: reading guide](START-HERE.md) · [Skills and project status](SKILLS.md) · [Learning path](LEARNING-PATH.md)
+[Start here: reading guide](START-HERE.md) · [Skills and project status](SKILLS.md) · [Learning path](LEARNING-PATH.md) · [Development timeline](PROGRESS.md)
 
 ## Example findings
 
