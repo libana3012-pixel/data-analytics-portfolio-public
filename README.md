@@ -1,4 +1,6 @@
 # Liban Yusuf | Data Analytics Portfolio
+
+[How the work was carried out, with tools and calculations](WORKFLOW.md)
 ### SQL · Python · Data Quality · Business Intelligence
 
 [![Portfolio checks](https://github.com/libana3012-pixel/data-analytics-portfolio-public/actions/workflows/verify.yml/badge.svg)](https://github.com/libana3012-pixel/data-analytics-portfolio-public/actions/workflows/verify.yml)
