@@ -1,5 +1,7 @@
 # Case study | Keeping unreliable records out of a report
 
+[← Portfolio home](../../README.md) · [Detailed method](METHOD.md)
+
 **Python · CSV validation · Unit tests · Synthetic input**
 
 [← Data Analytics portfolio](../../README.md) · [Read the approach in detail](METHOD.md) · [Source code](check_data.py) · [Automated tests](test_checks.py)
