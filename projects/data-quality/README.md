@@ -4,7 +4,7 @@
 
 **Python · CSV validation · Unit tests · Synthetic input**
 
-[← Data Analytics portfolio](../../README.md) · [Read the approach in detail](METHOD.md) · [Source code](check_data.py) · [Automated tests](test_checks.py)
+[← Data Analytics portfolio](../../README.md) · [Read the approach in detail](METHOD.md) · [Input fields and worked calculations](DATA-GUIDE.md) · [Source code](check_data.py) · [Automated tests](test_checks.py)
 
 ## 1. The business situation
 Imagine a manager receiving a monthly sales dashboard. A duplicate order inflates revenue; an unknown customer reference misstates customer activity; an invalid price may produce misleading values. A good-looking chart cannot correct incorrect input. I built a validation step **before** the reporting stage.
