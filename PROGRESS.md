@@ -1,62 +1,71 @@
-# Development timeline | Marketing to Data Analytics
+# Development process | From marketing measurement to data analytics
 
-[← Portfolio home](README.md) · [Reading guide](START-HERE.md) · [Learning path](LEARNING-PATH.md) · [Project workflow](WORKFLOW.md)
+[← Portfolio](README.md) · [Project guide](START-HERE.md) · [Tools and calculations](WORKFLOW.md)
 
-The portfolio is arranged by **subject-matter learning periods**. The month ranges explain the structure of the work; they are not altered GitHub timestamps or claims that every included example file was created in the month shown. All published case datasets are synthetic. Specific dated entries will be added when supported by actual work records.
+The portfolio is organised into two learning chapters: **Marketing Analytics (February–31 March 2026)** and **Data Analytics (April–October 2026)**. The stages below explain the sequence of decisions behind the published case studies. They are a *project-development narrative*, not an invented daily GitHub activity record. Example datasets are synthetic; original GitHub commit dates are not changed.
 
-## February–31 March 2026 | Marketing Analytics
+## Chapter I: Marketing Analytics | February–31 March 2026
 
-This chapter is documented in the separate [Marketing Analytics Portfolio](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio). It covers the business questions behind website measurement, campaign performance and organic search.
+[Open the Marketing Analytics portfolio](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio).
 
-| Topic | What the project demonstrates | Evidence |
+| Development phase | Question or reason for the step | What the completed case contains |
 | --- | --- | --- |
-| Website measurement | Defining useful actions before interpreting traffic and engagement | [Event plan and sample analysis](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/00-marketing-measurement) |
-| Campaign performance | Evaluating spend, click volume, conversions, attributed revenue and limitations together | [Campaign case](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/01-campaign-performance) |
-| Organic search | Separating increased impressions from changes in click-through rate | [Search case](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/02-organic-search) |
+| 1. Clarify measurement | Website traffic alone does not prove useful visitor behaviour. What should a business measure? | [Website questions and proposed events](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/00-marketing-measurement) |
+| 2. Define the input | Before interpreting performance, distinguish users, sessions, actions and how the metrics are collected. | Example CSV, event definitions and source caveats |
+| 3. Analyse campaigns | More clicks might simply reflect higher spend; compare outcomes and efficiency as well. | [Campaign calculations](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/01-campaign-performance) |
+| 4. Review organic search | Extra clicks could follow greater visibility, a higher CTR or both. | [Search analysis](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/02-organic-search) |
+| 5. Check and explain | A manager needs comprehensible definitions and reproducible numbers, not just figures. | Code, checks, KPI dictionary and management brief |
 
-These are the themes of the February–March chapter, not a simulated daily activity history.
+**Chapter outcome:** A structured, synthetic demonstration of measurement planning, campaign KPIs and SEO-style reporting. These are learning-period headings, not assertions that the current files were publicly committed during February or March.
 
-## April–September 2026 | Technical Data Analytics chapter
+## Chapter II: Data Analytics | April–October 2026
 
-The continuation centres on SQL and Python: relating transaction tables, choosing consistent KPI definitions, grouping customers, checking source quality and explaining results.
+The following stages show how the published technical projects fit together. Some original SQL practice predates this public compilation; the stage labels describe the learning path, not invented file-creation dates.
 
-| Focus area | Question and approach | Project evidence |
-| --- | --- | --- |
-| SQL: Revenue | Count distinct orders separately from item lines; reconstruct gross value using transaction-time prices | [Sales Revenue Analysis](https://github.com/libana3012-pixel/Sales-Revenue-Analysis) |
-| SQL: Customers | Start from registered customers, using a left join so people with no purchases are not lost | [Customer Sales Analysis](https://github.com/libana3012-pixel/Customer-Sales-Analysis) |
-| Python: Cohorts | Use next-calendar-month follow-up; report the final cohort as not observable when follow-up is missing | [Customer cohorts](projects/customer-cohorts/README.md) |
-| Python: Data quality | Validate IDs, quantities and prices with both passing and deliberately failing fixtures | [Data quality](projects/data-quality/README.md) |
-| Reconciliation | Recalculate illustrative retail figures in a second language and compare expected values | [Sales cross-check](python/README.md) |
+### Stage 1 — Formulate the business questions
+The [revenue case](https://github.com/libana3012-pixel/Sales-Revenue-Analysis) asks whether a change in sales value is connected to order count or basket value. The [customer case](https://github.com/libana3012-pixel/Customer-Sales-Analysis) asks who ordered once, returned or never ordered. These questions define what the subsequent data model and queries need to answer.
 
-The table groups work by technical theme rather than assigning invented completion dates to individual files.
+### Stage 2 — Understand and prepare the data
+The SQL exercises use four related tables: customers, products, orders and order items. One order may have multiple item rows, so an item count cannot be treated as an order count. Transaction-time price is used when reconstructing sample sales value. The complete fictional SQL inputs and setup instructions are available in the two standalone repositories.
 
-## 1 October 2026 | Public portfolio consolidation
+### Stage 3 — Build the first analyses
+SQL joins, grouped values, CTEs and date-based comparisons produce the customer segments and monthly revenue results. The [revenue method](https://github.com/libana3012-pixel/Sales-Revenue-Analysis/blob/main/case-study/METHOD.md) and [customer method](https://github.com/libana3012-pixel/Customer-Sales-Analysis/blob/main/case-study/METHOD.md) explain why each operation was selected, with worked calculations.
 
-The four existing public repositories were structured for external reading. This Data Analytics collection received its public-safe project files, step-by-step method notes, source-field guides, a [workflow explanation](WORKFLOW.md) and automated [GitHub verification](.github/workflows/verify.yml). The check passed after publication. Original practice and file-creation dates are not inferred from the date of this consolidation.
+### Stage 4 — Improve the comparisons
+A cumulative repeat-purchase share does not offer all customers equal time to return. The [Python cohort exercise](projects/customer-cohorts/README.md) therefore compares each first-purchase cohort against its immediately following calendar month. Because the example ends in June, July follow-up for June's cohort is recorded as **not observable**, rather than zero. [See the calculation](projects/customer-cohorts/METHOD.md).
 
-## October 2026 | Current work and next milestones
+### Stage 5 — Add quality checks
+Before relying on a reported value, test its underlying inputs. The [data-quality case](projects/data-quality/README.md) checks identifiers, reference values, quantities and prices using a passing fixture and a deliberately incorrect one. [See why each rule exists](projects/data-quality/METHOD.md).
 
-| Period | Work to undertake | Evidence required to mark complete | Status |
+### Stage 6 — Cross-check and present the results
+The [Python sales check](python/README.md) independently recalculates illustrative revenue and order figures from embedded example lines. The published work also includes method notes, data dictionaries and [GitHub verification](.github/workflows/verify.yml). The Python script currently keeps a separate copy of its input lines rather than importing the SQL tables directly; that is a documented improvement opportunity.
+
+### Public release — 1 October 2026
+The existing work was assembled into four public repositories with detailed navigation, explanations and automated checks. GitHub records the actual commits on this date. This consolidation date is not presented as the date on which every original concept, exercise or skill was first developed.
+
+## Remaining part of October | Next actual milestones
+
+| Target period | Next action | What will count as complete | Status |
 | --- | --- | --- | --- |
-| Early October | Review the SQL cases and annotate the reason for each query and validation decision | Updated query explanation, corresponding tested code | Planned |
-| Week 2 | Improve Python edge cases and test coverage | New unit tests and a passing workflow | Planned |
-| Week 3 | Build an actual Power BI report from the fictional sales case | Real report or genuine screenshots, validated against SQL | Planned |
-| Week 4 | Reconcile SQL, Python and Power BI results against one common source | Reproducible source-to-report comparison | Planned |
+| Early October | Review SQL source and make the purpose of each query and validation rule explicit | Checked query explanations and successful verification | Planned |
+| Second week | Extend Python test coverage and improve edge-case handling | Additional passing tests and documented cases | Planned |
+| Third week | Build and validate a real Power BI report from the fictional revenue source | A working file or genuine report screenshots with matching SQL totals | Planned |
+| Fourth week | Reconcile SQL, Python and Power BI against a common source | Reproducible comparison, including any differences | Planned |
 
-[Power BI](powerbi/README.md) and [Fabric](fabric/README.md) remain documented plans until there is working, verified output. An October target is not marked complete simply because it appears on the timeline.
+[Power BI](powerbi/README.md) and [Microsoft Fabric](fabric/README.md) are documented as *planned work*, not delivered reports or deployed platforms. Planned milestones are updated only after actual implementation.
 
-## How future progress will be recorded
+## How completed progress will be recorded
 
-Add an entry **after the work takes place**, using its actual date:
+New, dated entries are added as work is done and linked to a file, test or actual commit:
 
 ```markdown
-### YYYY-MM-DD — Specific improvement
-Question: What problem did I address?
-Tools: Which tools did I use?
-Reason: Why was this action needed?
-Change: Which file, calculation or test changed? Link to it.
-Result: What was verified?
-Next: What remains?
+### YYYY-MM-DD | Specific change
+Question: What was the problem?
+Tools: What did I use?
+Decision: Why did I choose this approach?
+Work: What exactly changed? Link the file.
+Verification: What result or test supports it?
+Next: What still needs attention?
 ```
 
-This timeline describes the learning sequence while GitHub's commit history continues to show the actual publication and change dates.
+This makes the reasoning and gradual technical development visible without manufacturing a historical contribution graph.
