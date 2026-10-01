@@ -1,5 +1,7 @@
 # Liban Yusuf | Data Analytics Portfolio
 
+[Complete project workflow](WORKFLOW.md)
+
 [How the work was carried out, with tools and calculations](WORKFLOW.md)
 ### SQL · Python · Data Quality · Business Intelligence
 
