@@ -1,6 +1,8 @@
 # Python cross-check: do the sales numbers agree?
 **Status: starter implementation.** This script rebuilds the totals from the same synthetic order lines as the SQL case study using Python's standard library. It deliberately does not claim a Pandas notebook is already complete.
 
+[Full calculation walkthrough](DETAILS.md)
+
 ## Run
 From the portfolio root: `python3 python/verify_sales.py`. Python 3.8+; no packages required.
 
