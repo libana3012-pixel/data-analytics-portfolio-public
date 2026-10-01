@@ -1,0 +1,37 @@
+name: Verify public data analytics cases
+
+on:
+  push:
+    paths:
+      - 'projects/**'
+      - 'python/**'
+      - '.github/workflows/verify.yml'
+  pull_request:
+    paths:
+      - 'projects/**'
+      - 'python/**'
+      - '.github/workflows/verify.yml'
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify cohorts and sample sales figures
+        run: |
+          python3 projects/customer-cohorts/cohorts.py
+          python3 python/verify_sales.py
+      - name: Validate data and run unit tests
+        run: |
+          python3 projects/data-quality/check_data.py
+          python3 -m unittest discover -s projects/data-quality -p 'test_*.py' -v
+      - name: Confirm intentionally faulty fixture is rejected
+        run: |
+          if python3 projects/data-quality/check_data.py projects/data-quality/data/orders_problematic.csv; then
+            echo "Expected faulty fixture to fail validation" >&2
+            exit 1
+          fi
