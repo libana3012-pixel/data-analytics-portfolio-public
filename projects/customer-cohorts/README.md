@@ -2,7 +2,7 @@
 
 **Python · Customer behaviour · Observation windows · Synthetic data**
 
-[← Portfolio home](../../README.md) · [Detailed method](METHOD.md) · [Results](RESULTS.md) · [Source data](data/orders.csv) · [Python code](cohorts.py)
+[← Portfolio home](../../README.md) · [Detailed method](METHOD.md) · [Data fields and worked example](DATA-GUIDE.md) · [Results](RESULTS.md) · [Source data](data/orders.csv) · [Python code](cohorts.py)
 
 ## The business problem
 A simple repeat-customer percentage can be unfair. A customer who first bought in March has more opportunities to return before June than someone whose first purchase was in June. If both are measured over the same calendar end date, the newer customer appears worse merely because there is less observation time.
