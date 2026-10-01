@@ -30,4 +30,4 @@ python3 projects/data-quality/check_data.py projects/data-quality/data/orders_pr
 For a complete technical overview, see [Skills and evidence](SKILLS.md) and [the learning route](LEARNING-PATH.md).
 
 ## Public versus private
-The original Data Analytics workspace has non-public NOBIMU material. This public copy contains no employer exports, original private commit history or unpublished company reporting.
+The projects use fictional source data and are intended to be reproducible without access to employer systems.
