@@ -43,6 +43,19 @@ The [Python sales check](python/README.md) independently recalculates illustrati
 ### Public release — 1 October 2026
 The existing work was assembled into four public repositories with detailed navigation, explanations and automated checks. GitHub records the actual commits on this date. This consolidation date is not presented as the date on which every original concept, exercise or skill was first developed.
 
+## Dated records that precede the public release
+
+These are records of relevant learning and analysis activity, **not dates assigned to the current public CSV files or retrospectively created GitHub commits**.
+
+| Date | Recorded work | How it connects to the portfolio |
+| --- | --- | --- |
+| **13 August 2026** | Defined a recurring practical learning route: SQL first, then Power BI, then portfolio/GitHub projects; Python where needed. | Provides the technical direction behind this chapter. |
+| **29–30 August 2026** | Worked through hands-on SQL exercises involving customers and purchases, including `SELECT`, `COUNT`, `JOIN` and fixing join errors. | The published SQL case studies extend these concepts into documented customer and revenue questions; they should not be mistaken for the exact earlier practice files. |
+| **21 September 2026** | Worked on organising website analytics and KPI material into an analytical report. | A prior reporting activity relevant to defining metrics and explaining findings; the published Marketing Analytics examples remain independently fictional. |
+| **1 October 2026** | Assembled and revised four public repositories, method explanations and automated checks. | Records the **publication and documentation milestone**, rather than claiming the underlying learning began that day. |
+
+Where the exact date of an individual exercise is not established, its place in the earlier development sequence is described in the preceding stages without assigning a false timestamp.
+
 ## Remaining part of October | Next actual milestones
 
 | Target period | Next action | What will count as complete | Status |
