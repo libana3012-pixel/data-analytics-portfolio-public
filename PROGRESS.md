@@ -1,45 +1,62 @@
-# Development log | Data Analytics
+# Development timeline | Marketing to Data Analytics
 
-[← Portfolio home](README.md) · [How the projects work](WORKFLOW.md) · [Learning path](LEARNING-PATH.md)
+[← Portfolio home](README.md) · [Reading guide](START-HERE.md) · [Learning path](LEARNING-PATH.md) · [Project workflow](WORKFLOW.md)
 
-This log records **actual repository milestones and future work separately**. Dates below refer to documented GitHub activity or intended work, not reconstructed contribution dates. GitHub commit history remains unchanged. The datasets are synthetic exercises.
+The portfolio is arranged by **subject-matter learning periods**. The month ranges explain the structure of the work; they are not altered GitHub timestamps or claims that every included example file was created in the month shown. All published case datasets are synthetic. Specific dated entries will be added when supported by actual work records.
 
-## Recorded milestone — 1 October 2026
+## February–31 March 2026 | Marketing Analytics
 
-The public-safe Data Analytics portfolio was set up with the following work, brought together from existing practice material and documented in its current form:
+This chapter is documented in the separate [Marketing Analytics Portfolio](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio). It covers the business questions behind website measurement, campaign performance and organic search.
 
-- [Customer cohort analysis](projects/customer-cohorts/README.md): Python example with defined next-calendar-month follow-up and missing June follow-up correctly identified as not observable.
-- [Data-quality exercise](projects/data-quality/README.md): clean and intentionally faulty CSV fixtures, a validator and automated unit tests.
-- [Sales cross-check](python/README.md): a Python standard-library calculation of the illustrative order and revenue figures.
-- [Workflow explanation](WORKFLOW.md), source-field guides and an organised reading route.
-- A [GitHub Actions workflow](.github/workflows/verify.yml) that runs the published checks. The workflow reported success when the public portfolio was assembled.
+| Topic | What the project demonstrates | Evidence |
+| --- | --- | --- |
+| Website measurement | Defining useful actions before interpreting traffic and engagement | [Event plan and sample analysis](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/00-marketing-measurement) |
+| Campaign performance | Evaluating spend, click volume, conversions, attributed revenue and limitations together | [Campaign case](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/01-campaign-performance) |
+| Organic search | Separating increased impressions from changes in click-through rate | [Search case](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio/tree/main/projects/02-organic-search) |
 
-The separately published [Revenue](https://github.com/libana3012-pixel/Sales-Revenue-Analysis), [Customer Sales](https://github.com/libana3012-pixel/Customer-Sales-Analysis) and [Marketing Analytics](https://github.com/libana3012-pixel/Marketing-Analytics-Portfolio) projects are linked rather than duplicated here. Their synthetic case studies and automated checks were also documented and verified. This is a summary of the work visible now, **not a claim that each component was originally created on this day**.
+These are the themes of the February–March chapter, not a simulated daily activity history.
 
-## Planned work | Update as it is completed
+## April–September 2026 | Technical Data Analytics chapter
 
-| Target window | Task | Completion evidence | Status |
+The continuation centres on SQL and Python: relating transaction tables, choosing consistent KPI definitions, grouping customers, checking source quality and explaining results.
+
+| Focus area | Question and approach | Project evidence |
+| --- | --- | --- |
+| SQL: Revenue | Count distinct orders separately from item lines; reconstruct gross value using transaction-time prices | [Sales Revenue Analysis](https://github.com/libana3012-pixel/Sales-Revenue-Analysis) |
+| SQL: Customers | Start from registered customers, using a left join so people with no purchases are not lost | [Customer Sales Analysis](https://github.com/libana3012-pixel/Customer-Sales-Analysis) |
+| Python: Cohorts | Use next-calendar-month follow-up; report the final cohort as not observable when follow-up is missing | [Customer cohorts](projects/customer-cohorts/README.md) |
+| Python: Data quality | Validate IDs, quantities and prices with both passing and deliberately failing fixtures | [Data quality](projects/data-quality/README.md) |
+| Reconciliation | Recalculate illustrative retail figures in a second language and compare expected values | [Sales cross-check](python/README.md) |
+
+The table groups work by technical theme rather than assigning invented completion dates to individual files.
+
+## 1 October 2026 | Public portfolio consolidation
+
+The four existing public repositories were structured for external reading. This Data Analytics collection received its public-safe project files, step-by-step method notes, source-field guides, a [workflow explanation](WORKFLOW.md) and automated [GitHub verification](.github/workflows/verify.yml). The check passed after publication. Original practice and file-creation dates are not inferred from the date of this consolidation.
+
+## October 2026 | Current work and next milestones
+
+| Period | Work to undertake | Evidence required to mark complete | Status |
 | --- | --- | --- | --- |
-| Early October | Review SQL queries line by line; explain joins, calculation grain and validation decisions | Source comments or a clear worked example linked from each SQL case | Planned |
-| October, week 2 | Improve Python exercises: edge cases, input validation and unit tests | New tests and a successful GitHub workflow | Planned |
-| October, week 3 | Build a real Power BI report from the synthetic sales case | Actual report file or genuine screenshots and reconciled figures | Planned |
-| October, week 4 | Compare source, SQL, Python and Power BI figures; document differences | One consistent source-to-report reconciliation | Planned |
-| November | Extend a case with a new business question and publish a dated findings note | Reproducible code, explanatory write-up and documented limitations | Planned |
+| Early October | Review the SQL cases and annotate the reason for each query and validation decision | Updated query explanation, corresponding tested code | Planned |
+| Week 2 | Improve Python edge cases and test coverage | New unit tests and a passing workflow | Planned |
+| Week 3 | Build an actual Power BI report from the fictional sales case | Real report or genuine screenshots, validated against SQL | Planned |
+| Week 4 | Reconcile SQL, Python and Power BI results against one common source | Reproducible source-to-report comparison | Planned |
 
-These windows are **targets**, not commitments or claims of already completed work. If a task takes longer, update the plan rather than marking it complete early.
+[Power BI](powerbi/README.md) and [Fabric](fabric/README.md) remain documented plans until there is working, verified output. An October target is not marked complete simply because it appears on the timeline.
 
-## Format for future entries
+## How future progress will be recorded
 
-When real work has been carried out, add a new entry in this format:
+Add an entry **after the work takes place**, using its actual date:
 
 ```markdown
-### YYYY-MM-DD — Short, specific milestone
-**Question:** What was I trying to understand or improve?
-**Tools:** Which tools were actually used?
-**Action:** Which file, query, calculation or test changed, and why?
-**Result:** What did I observe? Link the relevant file or commit.
-**Issue or limitation:** What was difficult, uncertain or still missing?
-**Next:** The smallest useful next step.
+### YYYY-MM-DD — Specific improvement
+Question: What problem did I address?
+Tools: Which tools did I use?
+Reason: Why was this action needed?
+Change: Which file, calculation or test changed? Link to it.
+Result: What was verified?
+Next: What remains?
 ```
 
-The aim is to make learning visible through verifiable changes and explanations, not to produce activity solely to fill the contribution calendar.
+This timeline describes the learning sequence while GitHub's commit history continues to show the actual publication and change dates.
