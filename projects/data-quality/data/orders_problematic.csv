@@ -1,0 +1,6 @@
+order_id,customer_id,quantity,unit_price
+O01,C01,2,50
+O02,C02,1,80
+O02,C02,1,80
+O03,C99,-2,20
+O04,C03,1,not_a_number
